@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+//@type {import('tailwindcss').Config};
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js, ts, jsx, tsx}"],
   theme: {
@@ -23,8 +24,8 @@ module.exports = {
         montserrat:["Montserrat", "sans-serif"]
       },
       content: {
-        evolvetext: "url('./assets/EvolveText.png')",
-        abstractwaves: "url('./assets/AbstractWaves.png')",
+        evolvetext: './assets/evolvetext.png',
+        abstractwaves: './assets/abstractviews.png',
         sparkles: "url('./assets/Sparkles.png')",
         circles: "url('./assets/Circles.png')",
       }

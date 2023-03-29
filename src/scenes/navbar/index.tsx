@@ -6,12 +6,11 @@ import Logo from "@/assets/Logo.png";
 type Props = {};
 const Navbar = (props: Props) => {
     
-    const flexBeyween = "flex items-center justify-between"
+    const flexBetween = "flex items-center justify-between"
   
     return  <nav>
         <div
-        className = {
-            
+        className = { `${flexBetween} fixed top-0 z-30 w-full py-6`
         }>
             
         </div>
