@@ -1,4 +1,4 @@
-import Navbar from "./scenes/navbar/index" 
+import Navbar from "@/scenes/navbar/index" 
 
 function App() {
   return (

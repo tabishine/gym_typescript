@@ -1,7 +1,12 @@
 //@type {import('tailwindcss').Config};
+const {join} = require('path');
 
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js, ts, jsx, tsx}"],
+  content: [ join(__dirname,
+    '.index.html', 
+  'src/**/*.{html, js, ts, jsx, tsx}'
+  )],
+
   theme: {
     extend: {
       colors:{
@@ -16,16 +21,18 @@ module.exports = {
         "secondary-500": "FFC132", 
       },
       backgroundImage: (theme) => ({
-        "gradient-yellowred": "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
-        "mobile-home": "url('./assets/HomePageGraphic.png')"
+        "gradient-yellowred": 
+        "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
+        "mobile-home": "url('./assets/HomePageGraphic.png')",
       }),
       fontFamily:{
         dmsans: ["DM Sans", "sans-serif"],
-        montserrat:["Montserrat", "sans-serif"]
+        montserrat:["Montserrat", "sans-serif"],
       },
+      //тут зафиксить проблему 
       content: {
-        evolvetext: './assets/evolvetext.png',
-        abstractwaves: './assets/abstractviews.png',
+        evolvetext: "url('./assets/evolvetext.png')",
+        abstractwaves: "url('./assets/abstractviews.png')",
         sparkles: "url('./assets/Sparkles.png')",
         circles: "url('./assets/Circles.png')",
       }
@@ -36,5 +43,5 @@ module.exports = {
         md: "1060px",
       },
   },
-  plugins: [], 
+  plugins: [ ], 
 };
