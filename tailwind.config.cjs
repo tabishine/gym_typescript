@@ -1,11 +1,13 @@
-//@type {import('tailwindcss').Config};
-const {join} = require('path');
+/** @type {import('tailwindcss').Config}; */
 
+const { default: postcss } = require('postcss');
+
+// const {join} = require('path');
+postcss.config.js 
 module.exports = {
-  content: [ join(__dirname,
-    '.index.html', 
-  'src/**/*.{html, js, ts, jsx, tsx}'
-  )],
+  content: [  
+  './src/**/*.{html, js, ts, jsx, tsx}'
+  ],
 
   theme: {
     extend: {
@@ -31,10 +33,10 @@ module.exports = {
       },
       //тут зафиксить проблему 
       content: {
-        evolvetext: "url('./assets/evolvetext.png')",
-        abstractwaves: "url('./assets/abstractviews.png')",
-        sparkles: "url('./assets/Sparkles.png')",
-        circles: "url('./assets/Circles.png')",
+        'evolvetext': 'url("/assets/evolvetext.png")',
+        'abstractwaves': "url('/assets/abstractviews.png')",
+        'sparkles': "url('/assets/Sparkles.png')",
+        'circles': "url('/assets/Circles.png')",
       }
       }, 
       screens: {
@@ -43,5 +45,9 @@ module.exports = {
         md: "1060px",
       },
   },
-  plugins: [ ], 
+  plugins: [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+   ], 
 };
